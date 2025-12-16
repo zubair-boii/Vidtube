@@ -1,0 +1,49 @@
+name: flutter_vidtube
+description: "A new Flutter project."
+publish_to: "none"
+version: 0.1.0
+
+environment:
+  sdk: ^3.10.0-162.1.beta
+
+dependencies:
+  dartz: ^0.10.1
+  equatable: ^2.0.7
+  flutter:
+    sdk: flutter
+  flutter_bloc: ^9.1.1
+  flutter_downloader: ^1.12.0
+  get_it: ^9.2.0
+  iconsax: ^0.0.8
+  internet_connection_checker: ^3.0.1
+  open_filex: ^4.7.0
+  path_provider: ^2.1.5
+  permission_handler: ^12.0.1
+  shimmer: ^3.0.0
+  video_player: ^2.10.1
+  youtube_explode_dart: ^3.0.5
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^6.0.0
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    - assets/images/
+
+  fonts:
+    - family: Helvetica
+      fonts:
+        - asset: assets/fonts/Helvetica.ttf
+        - asset: assets/fonts/Helvetica-Bold.ttf
+          weight: 700
+        - asset: assets/fonts/Helvetica-BoldOblique.ttf
+          weight: 700
+          style: italic
+        - asset: assets/fonts/Helvetica-Oblique.ttf
+          style: italic
+        - asset: assets/fonts/Helvetica-Light.ttf
+          weight: 300
