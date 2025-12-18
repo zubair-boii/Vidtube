@@ -77,7 +77,7 @@ class _HomePageState extends State<HomePage> {
 
                 const SizedBox(height: 20),
 
-                UrlInputBox(),
+                UrlInputBox(controller: urlController),
 
                 const SizedBox(height: 27),
 
@@ -85,7 +85,7 @@ class _HomePageState extends State<HomePage> {
                   title: "Download Video",
                   onPressed: () {
                     context.read<HomeBloc>().add(
-                      GetVideoByUrlEvent(urlController.text),
+                      GetVideoByUrlEvent(url: urlController.text),
                     );
                   },
                 ),

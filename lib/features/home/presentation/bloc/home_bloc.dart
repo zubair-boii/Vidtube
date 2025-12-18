@@ -1,3 +1,4 @@
+import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_vidtube/features/home/domain/usecases/get_video_by_url.dart';
 import 'package:flutter_vidtube/features/home/presentation/bloc/home_event.dart';
@@ -16,6 +17,7 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
   ) async {
     final url = event.url.trim();
 
+    debugPrint('URL: $url');
     if (url.isEmpty) return emit(HomeError('Please paste a YouTube URL'));
 
     emit(HomeLoading());

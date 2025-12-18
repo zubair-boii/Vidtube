@@ -1,3 +1,4 @@
+import 'package:flutter/material.dart';
 import 'package:flutter_vidtube/features/home/data/models/video_model.dart';
 import 'package:youtube_explode_dart/youtube_explode_dart.dart';
 
@@ -10,11 +11,11 @@ class HomeRemoteDatasourceImpl implements HomeRemoteDatasource {
 
   @override
   Future<VideoModel> getVideoByUrl(String url) async {
+    debugPrint('URL From DataSource: $url');
+
     final video = await _youtube.videos.get(url);
 
     return VideoModel(
-      description: video.description,
-      id: video.id,
       thumbnailUrl: video.thumbnails.highResUrl,
       title: video.title,
       videoUrl: video.url,

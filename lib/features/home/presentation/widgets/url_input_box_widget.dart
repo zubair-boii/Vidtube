@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 
 class UrlInputBox extends StatelessWidget {
-  const UrlInputBox({super.key});
+  final TextEditingController controller;
+
+  const UrlInputBox({Key? key, required this.controller}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return TextField();
+    return TextField(controller: controller);
   }
 }
