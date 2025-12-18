@@ -6,6 +6,7 @@ import 'package:flutter_vidtube/features/home/data/datasources/remote/home_remot
 import 'package:flutter_vidtube/features/home/data/repository_impl/home_repository_impl.dart';
 import 'package:flutter_vidtube/features/home/domain/repository/home_repository.dart';
 import 'package:flutter_vidtube/features/home/domain/usecases/get_video_by_url.dart';
+import 'package:flutter_vidtube/features/home/presentation/bloc/home_bloc.dart';
 import 'package:get_it/get_it.dart';
 import 'package:internet_connection_checker/internet_connection_checker.dart';
 
@@ -13,6 +14,7 @@ final sl = GetIt.instance;
 
 Future<void> setupLocator() async {
   // Blocs
+  sl.registerFactory(() => HomeBloc(sl()));
 
   // Repositories
   sl.registerLazySingleton<HomeRepository>(

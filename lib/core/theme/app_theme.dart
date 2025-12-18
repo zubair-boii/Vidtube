@@ -27,6 +27,9 @@ class AppTheme {
   }
 
   static ThemeData darkTheme() {
+    const borderRadius = 20.0;
+    const elevatedButtonBorderRadius = 20.0;
+
     return ThemeData(
       useMaterial3: true,
 
@@ -56,35 +59,35 @@ class AppTheme {
           backgroundColor: AppColor.primaryDark,
           foregroundColor: AppColor.onPrimaryDark,
           shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(25.0),
+            borderRadius: BorderRadius.circular(elevatedButtonBorderRadius),
           ),
+          minimumSize: const Size(150.0, 50.0),
+          padding: const EdgeInsets.symmetric(horizontal: 32.0, vertical: 16.0),
         ),
       ),
 
       // Text Field
-      inputDecorationTheme: InputDecorationTheme(
+      inputDecorationTheme: const InputDecorationTheme(
         border: OutlineInputBorder(
           borderSide: BorderSide(color: AppColor.primaryDark),
-          borderRadius: BorderRadius.circular(25.0),
+          borderRadius: BorderRadius.all(Radius.circular(borderRadius)),
         ),
         focusedBorder: OutlineInputBorder(
           borderSide: BorderSide(color: AppColor.primaryDark),
-        ),
-        errorBorder: OutlineInputBorder(
-          borderSide: BorderSide(color: AppColor.errorDark),
-        ),
-        focusedErrorBorder: OutlineInputBorder(
-          borderSide: BorderSide(color: AppColor.errorDark),
+          borderRadius: BorderRadius.all(Radius.circular(borderRadius)),
         ),
         enabledBorder: OutlineInputBorder(
           borderSide: BorderSide(color: AppColor.primaryDark),
+          borderRadius: BorderRadius.all(Radius.circular(borderRadius)),
         ),
-        disabledBorder: OutlineInputBorder(
-          borderSide: BorderSide(color: AppColor.primaryDark),
+        errorBorder: OutlineInputBorder(
+          borderSide: BorderSide(color: AppColor.errorDark),
+          borderRadius: BorderRadius.all(Radius.circular(borderRadius)),
         ),
-        errorStyle: TextStyle(color: AppColor.errorDark),
-        labelStyle: TextStyle(color: AppColor.primaryDark),
-        hintStyle: TextStyle(color: AppColor.primaryDark),
+        focusedErrorBorder: OutlineInputBorder(
+          borderSide: BorderSide(color: AppColor.errorDark),
+          borderRadius: BorderRadius.all(Radius.circular(borderRadius)),
+        ),
       ),
     );
   }

@@ -15,7 +15,9 @@ class HomeRepositoryImpl implements HomeRepository {
     try {
       final VideoModel videoModel = await remoteDatasource.getVideoByUrl(url);
       return Right(videoModel.toEntity());
-    } catch (e) {
+    } catch (e, stack) {
+      print('ERROR FETCHING VIDEO: $e');
+      print(stack);
       return Left(ServerFailure());
     }
   }
